@@ -1,0 +1,241 @@
+/* ===================================================
+   Waybar style for Niri — Dracula theme
+   Place at ~/.config/waybar/style.css
+   Font dependency: JetBrains Mono Nerd Font
+   =================================================== */
+
+/* ─── Official Dracula palette ──────────────────── */
+@define-color background   #282a36;   /* Background */
+@define-color current-line #44475a;   /* Current Line */
+@define-color selection    #44475a;   /* Selection */
+@define-color foreground   #f8f8f2;   /* Foreground */
+@define-color comment      #6272a4;   /* Comment */
+@define-color cyan         #8be9fd;   /* Cyan */
+@define-color green        #50fa7b;   /* Green */
+@define-color orange       #ffb86c;   /* Orange */
+@define-color pink         #ff79c6;   /* Pink */
+@define-color purple       #bd93f9;   /* Purple */
+@define-color red          #ff5555;   /* Red */
+@define-color yellow       #f1fa8c;   /* Yellow */
+
+/* ─── Global ───────────────────────────────────── */
+* {
+    font-family: "JetBrains Mono Nerd Font", "Symbols Nerd Font Mono", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: @foreground;
+    border: none;
+    border-radius: 0;
+}
+
+/* ─── Bar window ───────────────────────────────── */
+window#waybar {
+    background-color: @background;
+    border-bottom: 0px solid @current-line;
+    border-radius: 0;
+    padding: 0;
+    transition: background-color 0.3s;
+}
+
+/* ─── Tooltips ─────────────────────────────────── */
+tooltip {
+    background-color: @current-line;
+    border: 1px solid @comment;
+    border-radius: 4px;
+    color: @foreground;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+tooltip * {
+    color: @foreground;
+}
+
+/* ─── Custom logo ──────────────────────────────── */
+#custom-logo {
+    color: @purple;
+    background-color: @background;
+    padding: 0 12px 0 18px;
+    margin: 0;
+    font-size: 18px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#custom-logo:hover {
+    background-color: @current-line;
+    color: @pink;
+}
+
+/* ─── Niri workspaces ──────────────────────────── */
+#workspaces {
+    background: @background;
+    padding: 0;
+    margin: 0;
+}
+
+#workspaces button {
+    color: @comment;
+    background: @background;
+    padding: 0 10px;
+    margin: 0;
+    font-size: 14px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#workspaces button:hover {
+    background-color: @current-line;
+    color: @foreground;
+}
+
+#workspaces button.active {
+    color: @background;
+    background-color: @purple;
+    font-weight: 700;
+}
+
+#workspaces button.urgent {
+    color: @background;
+    background-color: @red;
+}
+
+/* ─── Niri window title (center) ───────────────── */
+#window {
+    color: @cyan;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: @background;
+    padding: 0 16px;
+    margin: 0;
+}
+
+#window.maximized {
+    color: @pink;
+}
+
+/* ─── Right-side modules ───────────────────────── */
+#cpu,
+#memory,
+#wireplumber,
+#network,
+#battery,
+#clock,
+#notipan,
+#custom-logout {
+    background-color: @background;
+    padding: 0 12px;
+    margin: 0;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#cpu:hover,
+#memory:hover,
+#wireplumber:hover,
+#network:hover,
+#battery:hover,
+#notipan:hover,
+#clock:hover {
+    background-color: @current-line;
+}
+
+/* ─── CPU ──────────────────────────────────────── */
+#cpu {
+    color: @cyan;
+}
+
+#cpu.warning {
+    color: @yellow;
+    background-color: @current-line;
+}
+
+#cpu.critical {
+    color: @red;
+    background-color: @current-line;
+}
+
+/* ─── Memory ───────────────────────────────────── */
+#memory {
+    color: @purple;
+}
+
+#memory.warning {
+    color: @yellow;
+    background-color: @current-line;
+}
+
+#memory.critical {
+    color: @red;
+    background-color: @current-line;
+}
+
+/* ─── Volume / WirePlumber ─────────────────────── */
+#wireplumber {
+    color: @green;
+}
+
+#wireplumber.muted {
+    color: @comment;
+    background-color: @current-line;
+}
+
+/* ─── Network ──────────────────────────────────── */
+#network {
+    color: @pink;
+}
+
+#network.disconnected {
+    color: @red;
+    background-color: @current-line;
+}
+
+#network.wifi-low {
+    color: @orange;
+}
+
+/* ─── Battery ──────────────────────────────────── */
+#battery {
+    color: @green;
+}
+
+#battery.warning {
+    color: @yellow;
+    background-color: @current-line;
+}
+
+#battery.critical {
+    color: @red;
+    background-color: @current-line;
+}
+
+#battery.charging {
+    color: @cyan;
+}
+
+#battery.plugged {
+    color: @purple;
+}
+
+/* ─── Clock ────────────────────────────────────── */
+#clock {
+    color: @orange;
+    font-weight: 600;
+}
+
+#notipan{
+	color:@purple;
+	font-weight:600;
+}
+
+#notipan:hover {
+	 background-color: @current-line;
+}
+
+/* ─── Logout button ────────────────────────────── */
+#custom-logout {
+    color: @red;
+    font-size: 15px;
+}
+
+#custom-logout:hover {
+    color: @pink;
+    background-color: @current-line;
+}
