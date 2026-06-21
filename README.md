@@ -9,13 +9,13 @@ A minimal and clean setup running on CachyOS with KDE and Hyprland.
 | Component | Tool |
 |---|---|
 | OS | CachyOS |
-| DE | KDE Plasma |
+| DE | Cinnamon (Optional) |
 | WM | Hyprland |
 | Terminal | Kitty |
-| App Launcher | Rofi |
+| App Launcher | Fuzzel (Rofi - optional) |
 | Panel | Waybar |
 | Wallpaper | swww + Waypaper |
-| Notification Daemon | Swaync |
+| Notification Daemon | Dunst |
 | Font | JetBrains Mono Nerd Font |
 
 ---
