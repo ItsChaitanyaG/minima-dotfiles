@@ -1,0 +1,146 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+    "width":1280,
+    "margin": "10 0 0 0",
+    "exclusive": true,
+    "spacing": 4,
+    "modules-left": [
+        "custom/logo",
+        "niri/workspaces",
+	"hyprland/workspaces", "hyprland/window"
+    ],
+    "modules-center": [
+        "niri/window"
+    ],
+    "modules-right": [
+        "memory",
+        "wireplumber",
+        "network",
+        "tray",
+        "clock",
+
+    ],
+    "custom/logo": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "~/.config/fuzzel/powermenu.sh"
+    },
+    "hyprland/workspaces": {
+    	"disable-scroll": false,
+    	"all-outputs": true,
+    	"format": "{id}",
+    	"on-click": "activate"
+    },
+
+    "tray": {
+    	"icon-size": 18,
+    	"spacing": 8
+    },
+
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icon": "{icon}",
+        "icon-default": "",
+        "icon-maximized": "",
+        "icon-minimized": "",
+        "icon-floating": "",
+        "icon-fullscreen": ""
+    },
+    "niri/window": {
+        "format": "{title}",
+        "max-length": 48
+    },
+    "cpu": {
+        "interval": 2,
+        "format": " {usage}%",
+        "tooltip": "CPU: {usage}% | Avg Freq: {avg_freq}GHz",
+        "on-click": "foot -e btop",
+        "states": {
+            "warning": 60,
+            "critical": 85
+        }
+    },
+    "memory": {
+        "interval": 2,
+        "format": " {used}G/{total}G",
+        "tooltip": "RAM: {used}G used / {total}G total\nSwap: {swapUsed}G used / {swapTotal}G total",
+        "on-click": "foot -e btop",
+        "states": {
+            "warning": 60,
+            "critical": 85
+        }
+    },
+    "wireplumber": {
+        "format": "{volume}%",
+        "format-muted": " Muted",
+        "tooltip": true,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-",
+        "format-icons": {
+            "speaker": "",
+            "high": "",
+            "medium": "",
+            "low": "",
+            "none": ""
+        }
+    },
+    "network": {
+        "interval": 5,
+        "format-wifi": "{icon} {signalStrength}%",
+        "format-ethernet": " Connected",
+        "format-disconnected": " Offline",
+        "format-portal": " Portal",
+        "tooltip-format-wifi": "SSID: {essid}\nSignal: {signalStrength}%\nFreq: {frequencyGHz} GHz",
+        "tooltip-format-ethernet": "Ethernet: {ifname}\nIP: {ipaddr}",
+        "tooltip-format-disconnected": "No network connection",
+        "on-click": "foot -e nmtui",
+        "format-icons": {
+            "wifi": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "ethernet": "",
+            "disconnected": ""
+        }
+    },
+    "battery": {
+        "interval": 10,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 10
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-full": " Full",
+        "tooltip-format": "Battery: {capacity}%\nStatus: {status}\nTime remaining: {time}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "clock": {
+        "interval": 30,
+        "format": " {:%H:%M}",
+        "format-alt": " {:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%A, %B %d, %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "on-click-right": "gnome-calendar"
+    },
+
+    "custom/logout": {
+        "format": "⏻ ",
+        "tooltip": "Session menu",
+        "on-click": "wlogout --protocol layer-shell"
+    }
+}
