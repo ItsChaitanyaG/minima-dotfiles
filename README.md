@@ -1,6 +1,6 @@
 # Minima Dotfiles
 
-A minimal and clean setup running on CachyOS with KDE and Hyprland.
+A minimal and clean setup running on CachyOS with Cinnamon and Hyprland.
 
 ---
 
