@@ -103,6 +103,16 @@ No extra setup needed — this is baked into the configs in this repo.
 
 ---
 
+# Preview
+
+<img width="1920" height="1080" alt="2026-06-25_13-00-11" src="https://github.com/user-attachments/assets/eca78ae8-08b7-4f3c-9892-2105a2875cb3" />
+<img width="1920" height="1080" alt="2026-06-25_12-48-59" src="https://github.com/user-attachments/assets/664aa6c7-fcda-401d-b9e4-a76542414455" />
+<img width="1920" height="1080" alt="2026-06-25_12-48-35" src="https://github.com/user-attachments/assets/32e54704-9a3a-4810-b16b-e7552c186af3" />
+<img width="1920" height="1080" alt="2026-06-25_12-48-05" src="https://github.com/user-attachments/assets/90e8c4c6-f851-46b7-857e-47cc43c2ba4e" />
+<img width="1920" height="1080" alt="2026-06-25_12-47-59" src="https://github.com/user-attachments/assets/7055c87f-9278-4034-a086-42ace5034779" />
+
+
+---
 
 
 ```
