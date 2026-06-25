@@ -233,6 +233,8 @@ hl.bind(mainMod .. " + F", function()
     end
 end)
 
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+
 -- Alt+Tab and Super+Tab: switch apps
 hl.bind("ALT + Tab", hl.dsp.layout("focus r"))
 hl.bind(mainMod .. " + Tab", hl.dsp.layout("focus r"))
