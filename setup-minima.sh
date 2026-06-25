@@ -48,6 +48,8 @@ PACMAN_PKGS=(
     nwg-look
     ttf-jetbrains-mono-nerd
     ntfs-3g
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     zsh
     greetd
@@ -56,6 +58,15 @@ PACMAN_PKGS=(
     mpv
     loupe
     mission-center
+    network-manager-applet
+    grim
+    slurp
+    wl-clipboard
+    brightnessctl
+    playerctl
+    pipewire
+    pipewire-pulse
+    wireplumber
 )
 
 sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"
@@ -187,22 +198,15 @@ echo "[8/8] Setting up greetd..."
 sudo mkdir -p /etc/greetd
 
 if [ ! -f /etc/greetd/config.toml ]; then
-    # Use a wrapper script to avoid nested-quote issues in the TOML command line
-    sudo tee /usr/local/bin/start-hyprland.sh > /dev/null << 'WRAPPER'
-#!/usr/bin/env bash
-exec dbus-run-session Hyprland
-WRAPPER
-    sudo chmod +x /usr/local/bin/start-hyprland.sh
-
     sudo tee /etc/greetd/config.toml > /dev/null << EOF
 [terminal]
 vt = 1
 
 [default_session]
-command = "tuigreet --cmd /usr/local/bin/start-hyprland.sh"
+command = "tuigreet --user-menu --cmd Hyprland"
 user = "greeter"
 EOF
-    echo "  -> greetd config created (defaults to launching Hyprland via dbus-run-session)"
+    echo "  -> greetd config created (launches Hyprland via tuigreet user-menu)"
 else
     echo "  -> /etc/greetd/config.toml already exists, skipping (edit manually if needed)"
 fi
