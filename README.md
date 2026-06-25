@@ -83,7 +83,6 @@ No extra setup needed — this is baked into the configs in this repo.
 | `Super + E` | Open file manager (Nemo) |
 | `Super + V` | Toggle floating |
 | `Super + D` | Open app launcher (Fuzzel) |
-| `Super + P` | Toggle pseudotile |
 | `Super + Y` | Hide and Unhide Waybar |
 | `Super + F` | Toggle column width (full / half) — scrolling layout |
 | `Super + Shift + F` | Toggle true fullscreen |
